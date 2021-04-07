@@ -1,0 +1,10 @@
+# ECSとは
+Amazon Elastic　Container Service(以下ECS)は、Dockerコンテナ環境を提供するサービスである。
+
+# ECSの特徴
+EC2インスタンス上で実行されるコンテナのことをTaskと呼び、EC2インスタンスのことはClusterと呼ぶ。
+１つのCluster上で複数のTaskを実行することができる。Cluster上で動作するTaskの定義はTask Definitionで行う。
+Taskの役割ごとにTask Definitionを用意し、それを基にClusterの上でTaskが起動する。
+同じTaskを複数用意したい場面がある。例えば、WebサーバーTaskを複数用意し、ELBに紐付けるときなどである。
+そのような場面で用いるのがServiceである。
+Serviceでは、「Webサーバー用のTask DefinitionでTaskを4つ起動する」といった指定ができる。
